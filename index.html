@@ -1,0 +1,1681 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IQ Test Platform - Discover Your True Potential</title>
+    <meta name="description" content="A leading global platform for measuring intelligence and cognitive abilities with the latest scientific standards. Tailored tests for over 195 countries worldwide.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-blue: #2c3e50;
+            --secondary-blue: #34495e;
+            --accent-blue: #3498db;
+            --light-grey: #ecf0f1;
+            --text-color: #333;
+            --white: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+            --success-green: #27ae60;
+            --warning-orange: #f39c12;
+            --danger-red: #e74c3c;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* Default to English font */
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-grey);
+            direction: ltr; /* Default to LTR */
+        }
+
+        /* The .english class is now the default styling, no need for it to change */
+        /* body.english {
+            font-family: 'Inter', sans-serif;
+            direction: ltr;
+        } */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary-blue), var(--secondary-blue));
+            color: var(--white);
+            padding: 30px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            position: relative;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        header h1 .highlight {
+            color: var(--accent-blue);
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .stat-item span {
+            font-size: 1.5em;
+            margin-left: 8px; /* Adjusted for LTR */
+            margin-right: 0; /* Adjusted for LTR */
+        }
+
+        /* Language Toggle Button (Removed as per user request) */
+        /*
+        .language-toggle {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease;
+        }
+
+        .language-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        */
+
+        /* Main Content */
+        main {
+            padding: 50px 0;
+            min-height: 70vh;
+        }
+
+        /* Card Styles */
+        .card {
+            background-color: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            padding: 40px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .card h3 {
+            color: var(--primary-blue);
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .card p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
+            text-align: center;
+            line-height: 1.8;
+        }
+
+        /* Button Styles */
+           .btn {
+    background-color: var(--accent-blue);
+    color: var(--white);
+    padding: 24px 48px;     
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5em;      
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    min-width: 220px;             
+             }
+
+
+
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-success {
+            background-color: var(--success-green);
+        }
+
+        .btn-success:hover {
+            background-color: #229954;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-blue);
+            color: var(--white);
+        }
+
+        /* Grid Layouts */
+        .choice-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .country-item {
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .country-item:hover {
+            border-color: var(--accent-blue);
+            background-color: #f8f9ff;
+            transform: translateY(-2px);
+        }
+
+        .country-item .flag-img {
+            width: 40px;
+            height: auto;
+            margin-right: 15px; /* Spacing from text (adjusted for LTR) */
+            margin-left: 0; /* Adjusted for LTR */
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .country-info h4 {
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .country-info p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        /* Test Interface */
+        .test-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .test-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .test-info .flag-img {
+            width: 40px;
+            height: auto;
+            margin-right: 15px; /* Spacing from text (adjusted for LTR) */
+            margin-left: 0; /* Adjusted for LTR */
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .test-info .global-flag-icon {
+            font-size: 2em;
+            margin-right: 15px; /* Adjusted for LTR */
+            margin-left: 0; /* Adjusted for LTR */
+        }
+
+
+        .timer {
+            text-align: center;
+        }
+
+        .timer .time {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .timer .label {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background-color: var(--accent-blue);
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .question-container {
+            margin: 40px 0;
+        }
+
+        .question-title {
+            font-size: 1.8em;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .options-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option {
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .option:hover {
+            border-color: var(--accent-blue);
+            background-color: #f8f9ff;
+        }
+
+        .option.selected {
+            border-color: var(--accent-blue);
+            background-color: var(--accent-blue);
+            color: var(--white);
+        }
+
+        .option-letter {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px; /* Adjusted for LTR */
+            margin-left: 0; /* Adjusted for LTR */
+            font-size: 1.2em;
+        }
+
+        .option.selected .option-letter {
+            background-color: var(--white);
+            color: var(--accent-blue);
+        }
+
+        /* Results Styles */
+        .results-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .celebration-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--success-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 2em;
+        }
+
+        .iq-score-container {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .iq-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: conic-gradient(var(--accent-blue) 0deg 216deg, #e0e0e0 216deg 360deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            position: relative;
+        }
+
+        .iq-circle::before {
+            content: '';
+            width: 160px;
+            height: 160px;
+            background-color: var(--white);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .iq-score {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .iq-number {
+            font-size: 3em;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .iq-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .breakdown-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .breakdown-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .breakdown-bar {
+            width: 100px;
+            height: 8px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+            margin: 0 15px;
+            overflow: hidden;
+        }
+
+        .breakdown-fill {
+            height: 100%;
+            background-color: var(--success-green);
+            border-radius: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 50px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h4 {
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--accent-blue);
+        }
+
+        /* Hidden sections */
+        .hidden {
+            display: none !important;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            .choice-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .countries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .test-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .breakdown-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .animate-slide-up {
+            animation: slideUp 0.3s ease-out;
+        }
+
+        .animate-bounce-in {
+            animation: bounceIn 0.6s ease-out;
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #e0e0e0;
+            border-top: 4px solid var(--accent-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="english">
+    <header>
+        <div class="container">
+            <div class="animate-fade-in">
+                <h1><span class="highlight">IQ</span> Test Platform</h1>
+                <p>Discover your true intelligence level with the most accurate scientific tests tailored for each country.</p>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <span>👥</span>
+                        <span>+1.2M Users</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>🌍</span>
+                        <span>195 Countries</span>
+                    </div>
+                    <div class="stat-item">
+                        <span>⭐</span>
+                        <span>99.2% Accuracy</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <section id="home-page" class="animate-slide-up">
+                <div class="card">
+                    <h3>Welcome to the IQ Test Platform!</h3>
+                    <p>Prepare for a unique experience to measure your mental abilities. Choose the type of test that suits you.</p>
+                </div>
+
+                <div class="choice-grid">
+                    <div class="card">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <span style="font-size: 4em;">🌍</span>
+                        </div>
+                        <h3>Global Test</h3>
+                        <p>A standardized international test in English that measures your intelligence according to approved global standards.</p>
+                        <div style="text-align: center; margin: 20px 0; color: #666;">
+                            <span>⏱️ 45 Minutes</span> • 
+                            <span>❓ 10 Questions</span> • 
+                            <span>🌐 English</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <button class="btn" onclick="startGlobalTest()">
+                                <span>▶️</span> Start Global Test
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div style="text-align: center; margin-bottom: 20px;">
+                            <span style="font-size: 4em;">🏁</span>
+                        </div>
+                        <h3>Country Test</h3>
+                        <p>A localized test for your country in your local language, designed according to local culture and educational standards.</p>
+                        <div style="text-align: center; margin: 20px 0; color: #666;">
+                            <span>⏱️ 35 Minutes</span> • 
+                            <span>❓ 10 Questions</span> • 
+                            <span>🏠 Local Language</span>
+                        </div>
+                        <div style="text-align: center;">
+                            <button class="btn btn-success" onclick="showCountrySelection()">
+                                <span>📍</span> Choose Your Country
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Why Choose Our Platform?</h3>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 30px;">
+                        <div style="text-align: center;">
+                            <div style="font-size: 3em; margin-bottom: 15px;">🧠</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Accurate Scientific Tests</h4>
+                            <p style="color: #666;">Based on the latest research in cognitive psychology</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3em; margin-bottom: 15px;">🌍</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Global Coverage</h4>
+                            <p style="color: #666;">Custom tests for over 195 countries worldwide</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <div style="font-size: 3em; margin-bottom: 15px;">📊</div>
+                            <h4 style="color: var(--primary-blue); margin-bottom: 10px;">Detailed Analysis</h4>
+                            <p style="color: #666;">Comprehensive reports with local and global comparisons</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="country-page" class="hidden animate-slide-up">
+                <div class="card">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <button class="btn btn-outline" onclick="showHomePage()">
+                            <span>➡️</span> Back to Selection
+                        </button>
+                    </div>
+                    <h3>Choose Your Country</h3>
+                    <p>Select your country to start a customized test in your local language.</p>
+                    
+                    <div class="countries-grid" id="countries-grid">
+                        </div>
+                    
+                    <div style="text-align: center; margin-top: 30px;">
+                        <p style="color: #666;">
+                            <span>ℹ️</span> Can't find your country? You can choose the Global Test instead.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="test-page" class="hidden">
+                <div class="card">
+                    <div class="test-header">
+                        <div class="test-info">
+                            <img id="test-flag-image" class="flag-img" src="" alt="Country Flag" style="display:none;">
+                            <span id="test-global-flag-icon" class="global-flag-icon" style="display:none;">🌍</span>
+                            <div>
+                                <h3 id="test-title">IQ Test</h3>
+                                <p style="color: #666; margin: 0;">Custom Test</p>
+                            </div>
+                        </div>
+                        <div class="timer">
+                            <div class="time" id="timer-display">45:00</div>
+                            <div class="label">Time Remaining</div>
+                        </div>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; color: #666; margin-bottom: 30px;">
+                        <span id="question-counter">Question 1 of 60</span>
+                        <span id="progress-percentage">0%</span>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h4 style="color: #666;">Question No. <span id="current-question-number">1</span></h4>
+                        <div style="display: flex; align-items: center; color: #666;">
+                            <span style="font-size: 1.5em; margin-right: 5px;">🧠</span>
+                            <span id="question-category">mathematical</span>
+                        </div>
+                    </div>
+                    
+                    <div class="question-container">
+                        <div class="question-title" id="question-text">
+                            Loading question...
+                        </div>
+                    
+                        <div class="options-container" id="options-container">
+                            </div>
+                    </div>
+                    
+                    <div style="display: flex; justify-content: space-between; margin-top: 40px;">
+                        <button class="btn btn-outline" id="prev-btn" onclick="previousQuestion()" disabled>
+                            <span>➡️</span> Previous Question
+                        </button>
+                        <button class="btn" id="next-btn" onclick="nextQuestion()" disabled>
+                            <span id="next-btn-text">Next Question</span>
+                            <span>⬅️</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="results-page" class="hidden animate-bounce-in">
+                <div class="results-header">
+                    <div class="celebration-icon">✅</div>
+                    <h2 style="color: var(--primary-blue); font-size: 2.5em; margin-bottom: 10px;">🎉 Congratulations!</h2>
+                    <p style="color: #666;">You have successfully completed the test. Here are your detailed results.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Your IQ Level</h3>
+                    <div class="iq-score-container">
+                        <div class="iq-circle" id="iq-circle">
+                            <div class="iq-score">
+                                <div class="iq-number" id="iq-score-number">120</div>
+                                <div class="iq-label">IQ Score</div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-size: 1.5em; font-weight: 600; color: var(--success-green); margin-bottom: 10px;" id="iq-level">
+                                Very Superior
+                            </div>
+                            <div style="color: #666;" id="percentile-text">Higher than 85% of the population</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="breakdown-grid">
+                    <div class="card">
+                        <h3>Performance Details</h3>
+                        <div id="breakdown-details">
+                            <div class="breakdown-item">
+                                <span>Mathematical Reasoning</span>
+                                <div class="breakdown-bar">
+                                    <div class="breakdown-fill" style="width: 85%"></div>
+                                </div>
+                                <span style="font-weight: 600;">85%</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Verbal Reasoning</span>
+                                <div class="breakdown-bar">
+                                    <div class="breakdown-fill" style="width: 78%"></div>
+                                </div>
+                                <span style="font-weight: 600;">78%</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Spatial Reasoning</span>
+                                <div class="breakdown-bar">
+                                    <div class="breakdown-fill" style="width: 92%"></div>
+                                </div>
+                                <span style="font-weight: 600;">92%</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Working Memory</span>
+                                <div class="breakdown-bar">
+                                    <div class="breakdown-fill" style="width: 73%"></div>
+                                </div>
+                                <span style="font-weight: 600;">73%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Test Statistics</h3>
+                        <div id="test-stats">
+                            <div class="breakdown-item">
+                                <span>Total Questions</span>
+                                <span style="font-weight: 600;" id="total-questions">60</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Correct Answers</span>
+                                <span style="font-weight: 600; color: var(--success-green);" id="correct-answers">48</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Accuracy</span>
+                                <span style="font-weight: 600;" id="accuracy">80%</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Test Type</span>
+                                <span style="font-weight: 600;" id="test-type">Global</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card" style="text-align: center;">
+                    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-bottom: 20px;">
+                        <button class="btn" onclick="shareResults()">
+                            <span>📤</span> Share Results
+                        </button>
+                        <button class="btn btn-success" onclick="downloadCertificate()">
+                            <span>📄</span> Download Certificate
+                        </button>
+                    </div>
+                    <button class="btn btn-outline" onclick="restartTest()">
+                        <span>🔄</span> Retake Test
+                    </button>
+                </div>
+            </section>
+
+            <section id="loading-page" class="hidden">
+                <div class="card" style="text-align: center;">
+                    <div class="loading-spinner"></div>
+                    <h3 style="margin-top: 30px;">Preparing Test...</h3>
+                    <p>Please wait a moment</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h4>IQ Test Platform</h4>
+                    <p style="color: rgba(255, 255, 255, 0.8); line-height: 1.6;">
+                        A leading global platform for measuring intelligence and cognitive abilities with the latest scientific standards.
+                    </p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#" onclick="startGlobalTest()">Global Test</a></li>
+                        <li><a href="#" onclick="showCountrySelection()">Country Test</a></li>
+                        <li><a href="#">Results</a></li>
+                        <li><a href="#">Statistics</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Report an Issue</a></li>
+                        <li><a href="#">User Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div style="display: flex; gap: 15px; justify-content: center;">
+                        <a href="#" style="font-size: 1.5em;">📘</a>
+                        <a href="#" style="font-size: 1.5em;">🐦</a>
+                        <a href="#" style="font-size: 1.5em;">📷</a>
+                        <a href="#" style="font-size: 1.5em;">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div style="border-top: 1px solid rgba(255, 255, 255, 0.2); margin-top: 30px; padding-top: 20px;">
+                <p style="color: rgba(255, 255, 255, 0.8); margin: 0;">
+                    &copy; 2025 IQ Test Platform. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Global Variables
+        let currentPage = 'home';
+        let currentQuestionIndex = 0;
+        let selectedAnswers = [];
+        let testQuestions = [];
+        let testTimer = null;
+        let timeRemaining = 2700; // 45 minutes for global test
+        let currentCountry = 'global';
+        let testStartTime = null;
+        let isEnglishUI = true; // Default to English UI
+
+        // Countries Data
+        const countries = [
+            // European Countries
+            { code: 'gb', name: 'United Kingdom', nameArabic: 'المملكة المتحدة', flagPath: 'https://flagcdn.com/w320/gb.png', language: 'English' },
+            { code: 'de', name: 'Germany', nameArabic: 'ألمانيا', flagPath: 'https://flagcdn.com/w320/de.png', language: 'German' },
+            { code: 'fr', name: 'France', nameArabic: 'فرنسا', flagPath: 'https://flagcdn.com/w320/fr.png', language: 'French' },
+            { code: 'it', name: 'Italy', nameArabic: 'إيطاليا', flagPath: 'https://flagcdn.com/w320/it.png', language: 'Italian' },
+            { code: 'es', name: 'Spain', nameArabic: 'إسبانيا', flagPath: 'https://flagcdn.com/w320/es.png', language: 'Spanish' },
+            { code: 'ru', name: 'Russia', nameArabic: 'روسيا', flagPath: 'https://flagcdn.com/w320/ru.png', language: 'Russian' },
+            
+            // United States
+            { code: 'us', name: 'United States', nameArabic: 'الولايات المتحدة', flagPath: 'https://flagcdn.com/w320/us.png', language: 'English' },
+
+            // Asian Countries
+            { code: 'cn', name: 'China', nameArabic: 'الصين', flagPath: 'https://flagcdn.com/w320/cn.png', language: 'Chinese' },
+            { code: 'jp', name: 'Japan', nameArabic: 'اليابان', flagPath: 'https://flagcdn.com/w320/jp.png', language: 'Japanese' },
+            { code: 'in', name: 'India', nameArabic: 'الهند', flagPath: 'https://flagcdn.com/w320/in.png', language: 'Hindi' },
+            { code: 'tr', name: 'Turkey', nameArabic: 'تركيا', flagPath: 'https://flagcdn.com/w320/tr.png', language: 'Turkish' },
+            { code: 'ir', name: 'Iran', nameArabic: 'إيران', flagPath: 'https://flagcdn.com/w320/ir.png', language: 'Persian' },
+            { code: 'pk', name: 'Pakistan', nameArabic: 'باكستان', flagPath: 'https://flagcdn.com/w320/pk.png', language: 'Urdu' },
+            { code: 'bd', name: 'Bangladesh', nameArabic: 'بنغلاديش', flagPath: 'https://flagcdn.com/w320/bd.png', language: 'Bengali' },
+            { code: 'id', name: 'Indonesia', nameArabic: 'إندونيسيا', flagPath: 'https://flagcdn.com/w320/id.png', language: 'Indonesian' },
+            { code: 'my', name: 'Malaysia', nameArabic: 'ماليزيا', flagPath: 'https://flagcdn.com/w320/my.png', language: 'Malay' },
+            { code: 'th', name: 'Thailand', nameArabic: 'تايلاند', flagPath: 'https://flagcdn.com/w320/th.png', language: 'Thai' },
+            { code: 'vn', name: 'Vietnam', nameArabic: 'فيتنام', flagPath: 'https://flagcdn.com/w320/vn.png', language: 'Vietnamese' },
+            { code: 'kr', name: 'South Korea', nameArabic: 'كوريا الجنوبية', flagPath: 'https://flagcdn.com/w320/kr.png', language: 'Korean' },
+            { code: 'sg', name: 'Singapore', nameArabic: 'سنغافورة', flagPath: 'https://flagcdn.com/w320/sg.png', language: 'English' },
+            { code: 'ph', name: 'Philippines', nameArabic: 'الفلبين', flagPath: 'https://flagcdn.com/w320/ph.png', language: 'Filipino' },
+
+            // Other Countries (Arab, Americas, Africa, Australia)
+            { code: 'eg', name: 'Egypt', nameArabic: 'مصر', flagPath: 'https://flagcdn.com/w320/eg.png', language: 'Arabic' },
+            { code: 'sa', name: 'Saudi Arabia', nameArabic: 'السعودية', flagPath: 'https://flagcdn.com/w320/sa.png', language: 'Arabic' },
+            { code: 'ae', name: 'United Arab Emirates', nameArabic: 'الإمارات', flagPath: 'https://flagcdn.com/w320/ae.png', language: 'Arabic' },
+            { code: 'ma', name: 'Morocco', nameArabic: 'المغرب', flagPath: 'https://flagcdn.com/w320/ma.png', language: 'Arabic' },
+            { code: 'jo', name: 'Jordan', nameArabic: 'الأردن', flagPath: 'https://flagcdn.com/w320/jo.png', language: 'Arabic' },
+            { code: 'lb', name: 'Lebanon', nameArabic: 'لبنان', flagPath: 'https://flagcdn.com/w320/lb.png', language: 'Arabic' },
+            { code: 'sy', name: 'Syria', nameArabic: 'سوريا', flagPath: 'https://flagcdn.com/w320/sy.png', language: 'Arabic' },
+            { code: 'iq', name: 'Iraq', nameArabic: 'العراق', flagPath: 'https://flagcdn.com/w320/iq.png', language: 'Arabic' },
+            { code: 'ps', name: 'Palestine', nameArabic: 'فلسطين', flagPath: 'https://flagcdn.com/w320/ps.png', language: 'Arabic' },
+            { code: 'kw', name: 'Kuwait', nameArabic: 'الكويت', flagPath: 'https://flagcdn.com/w320/kw.png', language: 'Arabic' },
+            { code: 'bh', name: 'Bahrain', nameArabic: 'البحرين', flagPath: 'https://flagcdn.com/w320/bh.png', language: 'Arabic' },
+            { code: 'qa', name: 'Qatar', nameArabic: 'قطر', flagPath: 'https://flagcdn.com/w320/qa.png', language: 'Arabic' },
+            { code: 'om', name: 'Oman', nameArabic: 'عُمان', flagPath: 'https://flagcdn.com/w320/om.png', language: 'Arabic' },
+            { code: 'ye', name: 'Yemen', nameArabic: 'اليمن', flagPath: 'https://flagcdn.com/w320/ye.png', language: 'Arabic' },
+            { code: 'tn', name: 'Tunisia', nameArabic: 'تونس', flagPath: 'https://flagcdn.com/w320/tn.png', language: 'Arabic' },
+            { code: 'dz', name: 'Algeria', nameArabic: 'الجزائر', flagPath: 'https://flagcdn.com/w320/dz.png', language: 'Arabic' },
+            { code: 'ly', name: 'Libya', nameArabic: 'ليبيا', flagPath: 'https://flagcdn.com/w320/ly.png', language: 'Arabic' },
+            { code: 'sd', name: 'Sudan', nameArabic: 'السودان', flagPath: 'https://flagcdn.com/w320/sd.png', language: 'Arabic' },
+            { code: 'ca', name: 'Canada', nameArabic: 'كندا', flagPath: 'https://flagcdn.com/w320/ca.png', language: 'English' },
+            { code: 'au', name: 'Australia', nameArabic: 'أستراليا', flagPath: 'https://flagcdn.com/w320/au.png', language: 'English' },
+            { code: 'br', name: 'Brazil', nameArabic: 'البرازيل', flagPath: 'https://flagcdn.com/w320/br.png', language: 'Portuguese' },
+            { code: 'mx', name: 'Mexico', nameArabic: 'المكسيك', flagPath: 'https://flagcdn.com/w320/mx.png', language: 'Spanish' },
+            { code: 'ng', name: 'Nigeria', nameArabic: 'نيجيريا', flagPath: 'https://flagcdn.com/w320/ng.png', language: 'English' },
+            { code: 'za', name: 'South Africa', nameArabic: 'جنوب أفريقيا', flagPath: 'https://flagcdn.com/w320/za.png', language: 'English' },
+        ];
+
+        // Global Test Questions (English)
+        const globalQuestions = [
+            { id: 1, category: 'mathematical', questionText: 'What number comes next in the sequence: 2, 4, 8, 16, ?', options: ['24', '32', '20', '28'], correctAnswer: '32', difficulty: 2, timeLimit: 60 },
+            { id: 2, category: 'verbal', questionText: 'Which word is the odd one out: Apple, Orange, Banana, Carrot?', options: ['Apple', 'Orange', 'Banana', 'Carrot'], correctAnswer: 'Carrot', difficulty: 1, timeLimit: 45 },
+            { id: 3, category: 'spatial', questionText: 'If you rotate a square 90 degrees clockwise, which corner that was at the top-left will be at the bottom-left?', options: ['Top-right', 'Bottom-right', 'Bottom-left', 'Top-left'], correctAnswer: 'Top-right', difficulty: 3, timeLimit: 90 },
+            { id: 4, category: 'memory', questionText: 'Study this sequence: 7, 3, 9, 1, 5. What was the third number?', options: ['7', '3', '9', '1'], correctAnswer: '9', difficulty: 2, timeLimit: 30 },
+            { id: 5, category: 'mathematical', questionText: 'If 3x + 7 = 22, what is the value of x?', options: ['3', '5', '7', '9'], correctAnswer: '5', difficulty: 2, timeLimit: 60 },
+            { id: 6, category: 'verbal', questionText: 'Complete the analogy: Book is to Reading as Fork is to ?', options: ['Kitchen', 'Eating', 'Metal', 'Food'], correctAnswer: 'Eating', difficulty: 2, timeLimit: 45 },
+            { id: 7, category: 'spatial', questionText: 'How many triangles can you see in a Star of David?', options: ['6', '8', '12', '13'], correctAnswer: '13', difficulty: 4, timeLimit: 120 },
+            { id: 8, category: 'memory', questionText: 'Remember these words: CAT, DOG, BIRD, FISH. Which animal was mentioned second?', options: ['CAT', 'DOG', 'BIRD', 'FISH'], correctAnswer: 'DOG', difficulty: 1, timeLimit: 25 },
+            { id: 9, category: 'mathematical', questionText: 'What is 25% of 80?', options: ['15', '20', '25', '30'], correctAnswer: '20', difficulty: 1, timeLimit: 30 },
+            { id: 10, category: 'verbal', questionText: 'Which word means the opposite of "Ancient"?', options: ['Old', 'Modern', 'Historic', 'Traditional'], correctAnswer: 'Modern', difficulty: 1, timeLimit: 30 }
+        ];
+
+        // Arabic Test Questions
+        const arabicQuestions = [
+            { id: 1, category: 'mathematical', questionText: 'ما هو الرقم التالي في المتسلسلة: 5، 10، 15، 20، ؟', options: ['25', '30', '22', '28'], correctAnswer: '25', difficulty: 1, timeLimit: 45 },
+            { id: 2, category: 'verbal', questionText: 'أي من الكلمات التالية لا تنتمي للمجموعة: قلم، كتاب، دفتر، تفاحة؟', options: ['قلم', 'كتاب', 'دفتر', 'تفاحة'], correctAnswer: 'تفاحة', difficulty: 1, timeLimit: 45 },
+            { id: 3, category: 'spatial', questionText: 'إذا كان لديك مربع وقمت بتدويره 180 درجة، أي زاوية ستصبح في المكان المقابل؟', options: ['الزاوية المقابلة', 'نفس الزاوية', 'الزاوية المجاورة', 'لا تتغير'], correctAnswer: 'الزاوية المقابلة', difficulty: 2, timeLimit: 60 },
+            { id: 4, category: 'memory', questionText: 'ادرس هذا التسلسل: أحمد، فاطمة، محمد، عائشة. ما هو الاسم الثالث؟', options: ['أحمد', 'فاطمة', 'محمد', 'عائشة'], correctAnswer: 'محمد', difficulty: 2, timeLimit: 30 },
+            { id: 5, category: 'mathematical', questionText: 'إذا كان 2س + 6 = 14، فما قيمة س؟', options: ['2', '4', '6', '8'], correctAnswer: '4', difficulty: 2, timeLimit: 60 },
+            { id: 6, category: 'verbal', questionText: 'أكمل التناظر: الطبيب إلى المستشفى كما المعلم إلى؟', options: ['المكتبة', 'المدرسة', 'المنزل', 'الحديقة'], correctAnswer: 'المدرسة', difficulty: 2, timeLimit: 45 },
+            { id: 7, category: 'spatial', questionText: 'كم عدد المربعات في شبكة 2x2؟', options: ['4', '5', '6', '8'], correctAnswer: '5', difficulty: 3, timeLimit: 90 },
+            { id: 8, category: 'memory', questionText: 'تذكر هذه الأرقام: 12، 25، 7، 31. ما هو الرقم الرابع؟', options: ['12', '25', '7', '31'], correctAnswer: '31', difficulty: 1, timeLimit: 25 },
+            { id: 9, category: 'mathematical', questionText: 'ما هو حاصل ضرب 7 في 8؟', options: ['49', '54', '56', '64'], correctAnswer: '56', difficulty: 1, timeLimit: 30 },
+            { id: 10, category: 'verbal', questionText: 'ما هي الكلمة التي تعني عكس "سريع"؟', options: ['نشيط', 'بطيء', 'قوي', 'متوسط'], correctAnswer: 'بطيء', difficulty: 1, timeLimit: 30 }
+        ];
+
+        // Functions to show/hide pages
+        function showPage(pageId) {
+            const pages = ['home-page', 'country-page', 'test-page', 'results-page', 'loading-page'];
+            pages.forEach(id => {
+                document.getElementById(id).classList.add('hidden');
+            });
+            document.getElementById(pageId).classList.remove('hidden');
+            currentPage = pageId.replace('-page', '');
+        }
+
+        // Removed toggleLanguage function as per user request for no translation button
+
+        // Function to update UI text content based on selected language
+        function updateUIContent(lang) {
+            // This is a simplified example. For a real app, you'd use a language object/map.
+            // Since default is English, we only need the English text, and handle Arabic for country specific tests
+            const textMap = {
+                arabic: {
+                    headerH1: '<span class="highlight">IQ</span> منصة اختبار الذكاء',
+                    headerP: 'اكتشف مستوى ذكائك الحقيقي مع أدق الاختبارات العلمية المصممة خصيصاً لكل دولة',
+                    statUser: '+1.2M مستخدم',
+                    statCountries: '195 دولة',
+                    statAccuracy: 'دقة 99.2%',
+                    cardWelcomeH3: 'أهلاً بك في منصة اختبار الذكاء!',
+                    cardWelcomeP: 'استعد لتجربة فريدة لقياس قدراتك العقلية. اختر نوع الاختبار الذي يناسبك',
+                    globalTestH3: 'الاختبار العالمي',
+                    globalTestP: 'اختبار معياري دولي باللغة الإنجليزية يقيس ذكائك وفقاً للمعايير العالمية المعتمدة',
+                    globalTestTime: '⏱️ 45 دقيقة',
+                    globalTestQuestions: '❓ 60 سؤال',
+                    globalTestLang: '🌐 إنجليزي',
+                    globalTestBtn: '<span>▶️</span> ابدأ الاختبار العالمي',
+                    countryTestH3: 'اختبار الدولة',
+                    countryTestP: 'اختبار مخصص لدولتك بلغتك المحلية، مصمم وفقاً للثقافة والمعايير التعليمية المحلية',
+                    countryTestTime: '⏱️ 35 دقيقة',
+                    countryTestQuestions: '❓ 50 سؤال',
+                    countryTestLang: '🏠 لغة محلية',
+                    countryTestBtn: '<span>📍</span> اختر دولتك',
+                    whyUsH3: 'لماذا تختار منصتنا؟',
+                    whyUs1H4: 'اختبارات علمية دقيقة',
+                    whyUs1P: 'مبنية على أحدث الأبحاث في علم النفس المعرفي',
+                    whyUs2H4: 'تغطية عالمية',
+                    whyUs2P: 'اختبارات مخصصة لأكثر من 195 دولة حول العالم',
+                    whyUs3H4: 'تحليل تفصيلي',
+                    whyUs3P: 'تقارير شاملة مع مقارنات محلية وعالمية',
+                    countryPageBackBtn: '<span>➡️</span> العودة للاختيار',
+                    countryPageH3: 'اختر دولتك',
+                    countryPageP: 'اختر دولتك لبدء اختبار مخصص بلغتك المحلية',
+                    countryPageInfo: '<span>ℹ️</span> لا تجد دولتك؟ يمكنك اختيار الاختبار العالمي بدلاً من ذلك',
+                    testPageTitleGlobal: 'اختبار الذكاء',
+                    testPageTypeGlobal: 'اختبار مخصص',
+                    timerLabel: 'الوقت المتبقي',
+                    questionCounterPrefix: 'السؤال',
+                    questionCounterSuffix: 'من',
+                    questionNumPrefix: 'السؤال رقم',
+                    prevBtn: '<span>➡️</span> السؤال السابق',
+                    nextBtnNext: 'السؤال التالي',
+                    nextBtnEnd: 'إنهاء الاختبار',
+                    resultsHeaderH2: '🎉 تهانينا!',
+                    resultsHeaderP: 'لقد أكملت الاختبار بنجاح. إليك نتائجك التفصيلية',
+                    iqScoreH3: 'مستوى ذكائك',
+                    iqScoreLabel: 'IQ Score',
+                    breakdownH3: 'تفاصيل الأداء',
+                    mathCategory: 'المنطق الرياضي',
+                    verbalCategory: 'التفكير اللغوي',
+                    spatialCategory: 'التفكير المكاني',
+                    memoryCategory: 'الذاكرة العاملة',
+                    statsH3: 'إحصائيات الاختبار',
+                    totalQuestions: 'إجمالي الأسئلة',
+                    correctAnswers: 'الإجابات الصحيحة',
+                    accuracy: 'الدقة',
+                    testType: 'نوع الاختبار',
+                    testTypeGlobal: 'عالمي',
+                    shareBtn: '<span>📤</span> شارك النتائج',
+                    downloadBtn: '<span>📄</span> تحميل الشهادة',
+                    restartBtn: '<span>🔄</span> إعادة الاختبار',
+                    loadingH3: 'جاري تحضير الاختبار...',
+                    loadingP: 'يرجى الانتظار قليلاً',
+                    footerH4IQ: 'منصة اختبار الذكاء',
+                    footerPIQ: 'منصة عالمية رائدة في قياس الذكاء والقدرات المعرفية بأحدث المعايير العلمية',
+                    footerH4QuickLinks: 'روابط سريعة',
+                    footerGlobalTest: 'الاختبار العالمي',
+                    footerCountryTest: 'اختبار الدولة',
+                    footerResults: 'النتائج',
+                    footerStats: 'الإحصائيات',
+                    footerH4Support: 'الدعم',
+                    footerFAQ: 'الأسئلة الشائعة',
+                    footerContact: 'اتصل بنا',
+                    footerReport: 'تقرير مشكلة',
+                    footerUserGuide: 'دليل المستخدم',
+                    footerH4Follow: 'تابعنا',
+                    footerCopyright: '&copy; 2025 منصة اختبار الذكاء. جميع الحقوق محفوظة.',
+                },
+                english: {
+                    headerH1: '<span class="highlight">IQ</span> Test Platform',
+                    headerP: 'Discover your true intelligence level with the most accurate scientific tests tailored for each country.',
+                    statUser: '+1.2M Users',
+                    statCountries: '195 Countries',
+                    statAccuracy: '99.2% Accuracy',
+                    cardWelcomeH3: 'Welcome to the IQ Test Platform!',
+                    cardWelcomeP: 'Prepare for a unique experience to measure your mental abilities. Choose the type of test that suits you.',
+                    globalTestH3: 'Global Test',
+                    globalTestP: 'A standardized international test in English that measures your intelligence according to approved global standards.',
+                    globalTestTime: '⏱️ 45 Minutes',
+                    globalTestQuestions: '❓ 10 Questions',
+                    globalTestLang: '🌐 English',
+                    globalTestBtn: '<span>▶️</span> Start Global Test',
+                    countryTestH3: 'Country Test',
+                    countryTestP: 'A localized test for your country in your local language, designed according to local culture and educational standards.',
+                    countryTestTime: '⏱️ 35 Minutes',
+                    countryTestQuestions: '❓ 10 Questions',
+                    countryTestLang: '🏠 Local Language',
+                    countryTestBtn: '<span>📍</span> Choose Your Country',
+                    whyUsH3: 'Why Choose Our Platform?',
+                    whyUs1H4: 'Accurate Scientific Tests',
+                    whyUs1P: 'Based on the latest research in cognitive psychology',
+                    whyUs2H4: 'Global Coverage',
+                    whyUs2P: 'Custom tests for over 195 countries worldwide',
+                    whyUs3H4: 'Detailed Analysis',
+                    whyUs3P: 'Comprehensive reports with local and global comparisons',
+                    countryPageBackBtn: '<span>➡️</span> Back to Selection',
+                    countryPageH3: 'Choose Your Country',
+                    countryPageP: 'Select your country to start a customized test in your local language.',
+                    countryPageInfo: '<span>ℹ️</span> Can\'t find your country? You can choose the Global Test instead.',
+                    testPageTitleGlobal: 'IQ Test',
+                    testPageTypeGlobal: 'Custom Test',
+                    timerLabel: 'Time Remaining',
+                    questionCounterPrefix: 'Question',
+                    questionCounterSuffix: 'of',
+                    questionNumPrefix: 'Question No.',
+                    prevBtn: '<span>➡️</span> Previous Question',
+                    nextBtnNext: 'Next Question',
+                    nextBtnEnd: 'End Test',
+                    resultsHeaderH2: '🎉 Congratulations!',
+                    resultsHeaderP: 'You have successfully completed the test. Here are your detailed results.',
+                    iqScoreH3: 'Your IQ Level',
+                    iqScoreLabel: 'IQ Score',
+                    percentileTextPrefix: 'Higher than', // Added for combining string in results
+                    percentileTextSuffix: 'of the population', // Added for combining string in results
+                    breakdownH3: 'Performance Details',
+                    mathCategory: 'Mathematical Reasoning',
+                    verbalCategory: 'Verbal Reasoning',
+                    spatialCategory: 'Spatial Reasoning',
+                    memoryCategory: 'Working Memory',
+                    statsH3: 'Test Statistics',
+                    totalQuestions: 'Total Questions',
+                    correctAnswers: 'Correct Answers',
+                    accuracy: 'Accuracy',
+                    testType: 'Test Type',
+                    testTypeGlobal: 'Global',
+                    shareBtn: '<span>📤</span> Share Results',
+                    downloadBtn: '<span>📄</span> Download Certificate',
+                    restartBtn: '<span>🔄</span> Retake Test',
+                    loadingH3: 'Preparing Test...',
+                    loadingP: 'Please wait a moment',
+                    footerH4IQ: 'IQ Test Platform',
+                    footerPIQ: 'A leading global platform for measuring intelligence and cognitive abilities with the latest scientific standards.',
+                    footerH4QuickLinks: 'Quick Links',
+                    footerGlobalTest: 'Global Test',
+                    footerCountryTest: 'Country Test',
+                    footerResults: 'Results',
+                    footerStats: 'Statistics',
+                    footerH4Support: 'Support',
+                    footerFAQ: 'FAQ',
+                    footerContact: 'Contact Us',
+                    footerReport: 'Report an Issue',
+                    footerUserGuide: 'User Guide',
+                    footerH4Follow: 'Follow Us',
+                    footerCopyright: '&copy; 2025 IQ Test Platform. All rights reserved.',
+                }
+            };
+
+            const currentText = textMap[lang];
+
+            // Update Header
+            document.querySelector('header h1').innerHTML = currentText.headerH1;
+            document.querySelector('header p').innerText = currentText.headerP;
+            document.querySelector('.stats-container .stat-item:nth-child(1) span:nth-child(2)').innerText = currentText.statUser;
+            document.querySelector('.stats-container .stat-item:nth-child(2) span:nth-child(2)').innerText = currentText.statCountries;
+            document.querySelector('.stats-container .stat-item:nth-child(3) span:nth-child(2)').innerText = currentText.statAccuracy;
+
+            // Update Home Page Cards
+            document.querySelector('#home-page .card:nth-child(1) h3').innerText = currentText.cardWelcomeH3;
+            document.querySelector('#home-page .card:nth-child(1) p').innerText = currentText.cardWelcomeP;
+
+            document.querySelector('.choice-grid .card:nth-child(1) h3').innerText = currentText.globalTestH3;
+            document.querySelector('.choice-grid .card:nth-child(1) p').innerText = currentText.globalTestP;
+            document.querySelector('.choice-grid .card:nth-child(1) div:nth-of-type(2) span:nth-child(1)').innerText = currentText.globalTestTime;
+            document.querySelector('.choice-grid .card:nth-child(1) div:nth-of-type(2) span:nth-child(2)').innerText = currentText.globalTestQuestions;
+            document.querySelector('.choice-grid .card:nth-child(1) div:nth-of-type(2) span:nth-child(3)').innerText = currentText.globalTestLang;
+            document.querySelector('.choice-grid .card:nth-child(1) .btn').innerHTML = currentText.globalTestBtn;
+
+            document.querySelector('.choice-grid .card:nth-child(2) h3').innerText = currentText.countryTestH3;
+            document.querySelector('.choice-grid .card:nth-child(2) p').innerText = currentText.countryTestP;
+            document.querySelector('.choice-grid .card:nth-child(2) div:nth-of-type(2) span:nth-child(1)').innerText = currentText.countryTestTime;
+            document.querySelector('.choice-grid .card:nth-child(2) div:nth-of-type(2) span:nth-child(2)').innerText = currentText.countryTestQuestions;
+            document.querySelector('.choice-grid .card:nth-child(2) div:nth-of-type(2) span:nth-child(3)').innerText = currentText.countryTestLang;
+            document.querySelector('.choice-grid .card:nth-child(2) .btn').innerHTML = currentText.countryTestBtn;
+
+            document.querySelector('#home-page .card:nth-child(3) h3').innerText = currentText.whyUsH3;
+            document.querySelector('#home-page .card:nth-child(3) div > div:nth-child(1) h4').innerText = currentText.whyUs1H4;
+            document.querySelector('#home-page .card:nth-child(3) div > div:nth-child(1) p').innerText = currentText.whyUs1P;
+            document.querySelector('#home-page .card:nth-child(3) div > div:nth-child(2) h4').innerText = currentText.whyUs2H4;
+            document.querySelector('#home-page .card:nth-child(3) div > div:nth-child(2) p').innerText = currentText.whyUs2P;
+            document.querySelector('#home-page .card:nth-child(3) div > div:nth-child(3) h4').innerText = currentText.whyUs3H4;
+            document.querySelector('#home-page .card:nth-child(3) div > div:nth-child(3) p').innerText = currentText.whyUs3P;
+
+            // Update Country Page
+            document.querySelector('#country-page .card .btn-outline').innerHTML = currentText.countryPageBackBtn;
+            document.querySelector('#country-page .card h3').innerText = currentText.countryPageH3;
+            document.querySelector('#country-page .card p:nth-of-type(1)').innerText = currentText.countryPageP;
+            document.querySelector('#country-page .card p:nth-of-type(2)').innerHTML = currentText.countryPageInfo;
+            // Country list itself is dynamically generated based on current language for name display
+
+            // Update Test Page (mostly dynamic, but static labels can be updated)
+            document.getElementById('test-title').innerText = currentText.testPageTitleGlobal;
+            document.querySelector('#test-page .test-info p').innerText = currentText.testPageTypeGlobal;
+            document.querySelector('#test-page .timer .label').innerText = currentText.timerLabel;
+            document.getElementById('question-counter').innerText = `${currentText.questionCounterPrefix} ${currentQuestionIndex + 1} ${currentText.questionCounterSuffix} ${testQuestions.length}`;
+            document.querySelector('#test-page .card:nth-child(2) h4').innerHTML = `${currentText.questionNumPrefix} <span id="current-question-number">${currentQuestionIndex + 1}</span>`;
+            document.getElementById('prev-btn').innerHTML = currentText.prevBtn;
+            document.getElementById('next-btn-text').innerText =
+                currentQuestionIndex === testQuestions.length - 1 ? currentText.nextBtnEnd : currentText.nextBtnNext;
+            
+            // Update Results Page
+            document.querySelector('#results-page .results-header h2').innerText = currentText.resultsHeaderH2;
+            document.querySelector('#results-page .results-header p').innerText = currentText.resultsHeaderP;
+            document.querySelector('#results-page .card:nth-child(2) h3').innerText = currentText.iqScoreH3;
+            document.querySelector('#iq-score-number').innerText = document.getElementById('iq-score-number').innerText; // Keep current score
+            document.querySelector('#results-page #iq-score-number + .iq-label').innerText = currentText.iqScoreLabel;
+            document.querySelector('#results-page #iq-level').innerText = getIQLevel(parseInt(document.getElementById('iq-score-number').innerText), lang === 'english' ? 'en' : 'ar');
+            document.querySelector('#results-page #percentile-text').innerText = `${currentText.percentileTextPrefix} ${getPercentile(parseInt(document.getElementById('iq-score-number').innerText))}% ${currentText.percentileTextSuffix}`;
+
+            document.querySelector('#results-page .breakdown-grid .card:nth-child(1) h3').innerText = currentText.breakdownH3;
+            // Category names in breakdown are updated dynamically in calculateResults, but ensure they reflect current lang if not already
+            const breakdownItems = document.querySelectorAll('#breakdown-details .breakdown-item span:nth-child(1)');
+            if (breakdownItems.length > 0) {
+                breakdownItems[0].innerText = currentText.mathCategory;
+                breakdownItems[1].innerText = currentText.verbalCategory;
+                breakdownItems[2].innerText = currentText.spatialCategory;
+                breakdownItems[3].innerText = currentText.memoryCategory;
+            }
+
+            document.querySelector('#results-page .breakdown-grid .card:nth-child(2) h3').innerText = currentText.statsH3;
+            document.querySelector('#test-stats .breakdown-item:nth-child(1) span:nth-child(1)').innerText = currentText.totalQuestions;
+            document.querySelector('#test-stats .breakdown-item:nth-child(2) span:nth-child(1)').innerText = currentText.correctAnswers;
+            document.querySelector('#test-stats .breakdown-item:nth-child(3) span:nth-child(1)').innerText = currentText.accuracy;
+            document.querySelector('#test-stats .breakdown-item:nth-child(4) span:nth-child(1)').innerText = currentText.testType;
+            document.querySelector('#test-stats .breakdown-item:nth-child(4) span:nth-child(2)').innerText = currentCountry === 'global' ? currentText.testTypeGlobal : (isEnglishUI ? `Custom (${countries.find(c => c.code === currentCountry)?.name || 'Unknown'})` : `مخصص (${countries.find(c => c.code === currentCountry)?.nameArabic || 'غير معروف'})`);
+
+
+            document.querySelector('#results-page .card:nth-child(4) .btn:nth-child(1)').innerHTML = currentText.shareBtn;
+            document.querySelector('#results-page .card:nth-child(4) .btn:nth-child(2)').innerHTML = currentText.downloadBtn;
+            document.querySelector('#results-page .card:nth-child(4) .btn-outline').innerHTML = currentText.restartBtn;
+
+            // Update Loading Page
+            document.querySelector('#loading-page .card h3').innerText = currentText.loadingH3;
+            document.querySelector('#loading-page .card p').innerText = currentText.loadingP;
+
+            // Update Footer
+            document.querySelector('footer .footer-section:nth-child(1) h4').innerText = currentText.footerH4IQ;
+            document.querySelector('footer .footer-section:nth-child(1) p').innerText = currentText.footerPIQ;
+            document.querySelector('footer .footer-section:nth-child(2) h4').innerText = currentText.footerH4QuickLinks;
+            document.querySelector('footer .footer-section:nth-child(2) ul li:nth-child(1) a').innerText = currentText.footerGlobalTest;
+            document.querySelector('footer .footer-section:nth-child(2) ul li:nth-child(2) a').innerText = currentText.footerCountryTest;
+            document.querySelector('footer .footer-section:nth-child(2) ul li:nth-child(3) a').innerText = currentText.footerResults;
+            document.querySelector('footer .footer-section:nth-child(2) ul li:nth-child(4) a').innerText = currentText.footerStats;
+            document.querySelector('footer .footer-section:nth-child(3) h4').innerText = currentText.footerH4Support;
+            document.querySelector('footer .footer-section:nth-child(3) ul li:nth-child(1) a').innerText = currentText.footerFAQ;
+            document.querySelector('footer .footer-section:nth-child(3) ul li:nth-child(2) a').innerText = currentText.footerContact;
+            document.querySelector('footer .footer-section:nth-child(3) ul li:nth-child(3) a').innerText = currentText.footerReport;
+            document.querySelector('footer .footer-section:nth-child(3) ul li:nth-child(4) a').innerText = currentText.footerUserGuide;
+            document.querySelector('footer .footer-section:nth-child(4) h4').innerText = currentText.footerH4Follow;
+            document.querySelector('footer p').innerText = currentText.footerCopyright;
+
+            // Update dynamic parts for countries if on country page
+            if (currentPage === 'country') {
+                populateCountries();
+            }
+        }
+
+
+        function showHomePage() {
+            showPage('home-page');
+            clearInterval(testTimer); // Ensure any running timer is cleared
+            updateUIContent('english'); // Always update content to English
+        }
+
+        function showCountrySelection() {
+            populateCountries();
+            showPage('country-page');
+            updateUIContent('english'); // Always update content to English
+        }
+
+        function populateCountries() {
+            const countriesGrid = document.getElementById('countries-grid');
+            countriesGrid.innerHTML = ''; // Clear previous entries
+            countries.forEach(country => {
+                const countryItem = document.createElement('div');
+                countryItem.classList.add('country-item');
+                // Pass country.code as an argument to startTest
+                countryItem.onclick = () => startTest('local', country.code);
+                countryItem.innerHTML = `
+                    <img class="flag-img" src="${country.flagPath}" alt="${isEnglishUI ? country.name : country.nameArabic} Flag">
+                    <div class="country-info">
+                        <h4>${isEnglishUI ? country.name : country.nameArabic}</h4>
+                        <p>${country.language} (${isEnglishUI ? country.nameArabic : country.name})</p>
+                    </div>
+                `;
+                countriesGrid.appendChild(countryItem);
+            });
+        }
+
+        function startGlobalTest() {
+            startTest('global');
+        }
+
+        function startTest(type, countryCode = null) {
+            showPage('loading-page'); // Show loading spinner
+            currentCountry = countryCode || 'global';
+            currentQuestionIndex = 0;
+            selectedAnswers = [];
+            clearInterval(testTimer); // Clear any existing timer
+
+            const testFlagImage = document.getElementById('test-flag-image');
+            const testGlobalFlagIcon = document.getElementById('test-global-flag-icon');
+            const testTitleElement = document.getElementById('test-title');
+            const testInfoPElement = document.querySelector('#test-page .test-info p');
+
+
+            if (type === 'global') {
+                testQuestions = shuffleArray([...globalQuestions]);
+                timeRemaining = 2700; // 45 minutes
+                testTitleElement.innerText = isEnglishUI ? 'Global Test' : 'الاختبار العالمي';
+                testInfoPElement.innerText = isEnglishUI ? 'Standard International Test' : 'اختبار معياري دولي';
+                
+                // Show global icon, hide flag image
+                testGlobalFlagIcon.style.display = 'inline-block';
+                testFlagImage.style.display = 'none';
+
+            } else if (type === 'local' && countryCode) {
+                const country = countries.find(c => c.code === countryCode);
+                if (country) {
+                    testTitleElement.innerText = isEnglishUI ? `${country.name} Test` : `اختبار ${country.nameArabic}`;
+                    testInfoPElement.innerText = isEnglishUI ? 'Custom Local Test' : 'اختبار مخصص محلي';
+                    
+                    // Show flag image, hide global icon
+                    testFlagImage.src = country.flagPath;
+                    testFlagImage.alt = `${isEnglishUI ? country.name : country.nameArabic} Flag`;
+                    testFlagImage.style.display = 'inline-block';
+                    testGlobalFlagIcon.style.display = 'none';
+
+                    timeRemaining = 2100; // 35 minutes for local test
+
+                    if (country.language === 'Arabic') {
+                        testQuestions = shuffleArray([...arabicQuestions]);
+                    } else if (country.language === 'English') {
+                        testQuestions = shuffleArray([...globalQuestions]); // Use global for English local
+                    } else {
+                        // Fallback for other languages, for now use global
+                        testQuestions = shuffleArray([...globalQuestions]);
+                        alert(isEnglishUI ? 'Local language for this country is not yet available. Global test will be used.' : 'اللغة المحلية لهذه الدولة غير متوفرة بعد. سيتم استخدام الاختبار العالمي.');
+                    }
+                } else {
+                    // Fallback to global if country not found
+                    testQuestions = shuffleArray([...globalQuestions]);
+                    timeRemaining = 2700;
+                    testTitleElement.innerText = isEnglishUI ? 'Global Test (Fallback)' : 'الاختبار العالمي (افتراضي)';
+                    testInfoPElement.innerText = isEnglishUI ? 'Standard International Test' : 'اختبار معياري دولي';
+                    
+                    // Show global icon, hide flag image
+                    testGlobalFlagIcon.style.display = 'inline-block';
+                    testFlagImage.style.display = 'none';
+                }
+            }
+
+            selectedAnswers = new Array(testQuestions.length).fill(null);
+
+            // Using setTimeout to allow loading-page to render before test-page
+            setTimeout(() => {
+                showPage('test-page'); // Show test page after a short delay
+                testStartTime = Date.now();
+                startTimer();
+                displayQuestion();
+                updateProgressBar();
+                updateUIContent('english'); // Ensure UI text content is correct for test page (English)
+            }, 1000); // Simulate test loading for 1 second
+        }
+
+        function displayQuestion() {
+            const questionTextElement = document.getElementById('question-text');
+            const optionsContainer = document.getElementById('options-container');
+            const questionCounter = document.getElementById('question-counter');
+            const currentQuestionNumberElement = document.getElementById('current-question-number');
+            const questionCategoryElement = document.getElementById('question-category');
+            const nextBtn = document.getElementById('next-btn');
+            const prevBtn = document.getElementById('prev-btn');
+
+            if (testQuestions.length === 0) {
+                questionTextElement.innerText = isEnglishUI ? 'No questions available for this test.' : 'لا توجد أسئلة متوفرة لهذا الاختبار.';
+                optionsContainer.innerHTML = '';
+                nextBtn.disabled = true;
+                prevBtn.disabled = true;
+                return;
+            }
+
+            const currentQuestion = testQuestions[currentQuestionIndex];
+            questionTextElement.innerText = currentQuestion.questionText;
+            questionCategoryElement.innerText = isEnglishUI ? currentQuestion.category.charAt(0).toUpperCase() + currentQuestion.category.slice(1) : getCategoryName(currentQuestion.category);
+            optionsContainer.innerHTML = ''; // Clear previous options
+
+            currentQuestion.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.classList.add('option');
+                if (selectedAnswers[currentQuestionIndex] === option) {
+                    optionDiv.classList.add('selected');
+                }
+                optionDiv.onclick = () => selectOption(option, optionDiv);
+                optionDiv.innerHTML = `
+                    <span class="option-letter">${String.fromCharCode(65 + index)}</span>
+                    <span>${option}</span>
+                `;
+                optionsContainer.appendChild(optionDiv);
+            });
+
+            questionCounter.innerText = `${isEnglishUI ? 'Question' : 'السؤال'} ${currentQuestionIndex + 1} ${isEnglishUI ? 'of' : 'من'} ${testQuestions.length}`;
+            currentQuestionNumberElement.innerText = currentQuestionIndex + 1;
+
+            // Update navigation buttons
+            prevBtn.disabled = currentQuestionIndex === 0;
+            nextBtn.disabled = selectedAnswers[currentQuestionIndex] === null;
+            document.getElementById('next-btn-text').innerText =
+                currentQuestionIndex === testQuestions.length - 1 ? (isEnglishUI ? 'End Test' : 'إنهاء الاختبار') : (isEnglishUI ? 'Next Question' : 'السؤال التالي');
+        }
+
+        function selectOption(option, element) {
+            selectedAnswers[currentQuestionIndex] = option;
+            // Remove 'selected' class from all options for the current question
+            Array.from(element.parentNode.children).forEach(child => {
+                child.classList.remove('selected');
+            });
+            // Add 'selected' class to the clicked option
+            element.classList.add('selected');
+            document.getElementById('next-btn').disabled = false; // Enable next button
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < testQuestions.length - 1) {
+                currentQuestionIndex++;
+                displayQuestion();
+                updateProgressBar();
+            } else {
+                // End of test
+                clearInterval(testTimer);
+                calculateResults();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuestion();
+                updateProgressBar();
+            }
+        }
+
+        function startTimer() {
+            const timerDisplay = document.getElementById('timer-display');
+            testTimer = setInterval(() => {
+                timeRemaining--;
+                updateTimerDisplay(timerDisplay);
+                if (timeRemaining <= 0) {
+                    clearInterval(testTimer);
+                    calculateResults();
+                    alert(isEnglishUI ? 'Time is up! Results will be displayed.' : 'انتهى الوقت! سيتم عرض النتائج.');
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay(timerDisplayElement) {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            timerDisplayElement.innerText = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        function updateProgressBar() {
+            const progressFill = document.getElementById('progress-fill');
+            const progressPercentage = document.getElementById('progress-percentage');
+            const progress = ((currentQuestionIndex + 1) / testQuestions.length) * 100;
+            progressFill.style.width = `${progress}%`;
+            progressPercentage.innerText = `${Math.round(progress)}%`;
+        }
+
+        function calculateResults() {
+            showPage('results-page');
+            let correctCount = 0;
+            const breakdown = { mathematical: 0, verbal: 0, spatial: 0, memory: 0 };
+            const categoryCounts = { mathematical: 0, verbal: 0, spatial: 0, memory: 0 };
+
+            testQuestions.forEach((question, index) => {
+                if (selectedAnswers[index] === question.correctAnswer) {
+                    correctCount++;
+                    breakdown[question.category]++;
+                }
+                categoryCounts[question.category]++;
+            });
+
+            const iqScore = calculateIQ(correctCount, testQuestions.length);
+            const accuracy = (correctCount / testQuestions.length) * 100;
+
+            document.getElementById('iq-score-number').innerText = iqScore;
+            document.getElementById('iq-level').innerText = isEnglishUI ? getIQLevel(iqScore, 'en') : getIQLevel(iqScore, 'ar');
+            document.getElementById('percentile-text').innerText = `${isEnglishUI ? 'Higher than' : 'أعلى من'} ${getPercentile(iqScore)}% ${isEnglishUI ? 'of the population' : 'من السكان'}`;
+            
+            updateIQCircle(iqScore);
+
+            document.getElementById('total-questions').innerText = testQuestions.length;
+            document.getElementById('correct-answers').innerText = correctCount;
+            document.getElementById('accuracy').innerText = `${accuracy.toFixed(1)}%`;
+            document.getElementById('test-type').innerText = currentCountry === 'global' ? (isEnglishUI ? 'Global' : 'عالمي') : (isEnglishUI ? `Custom (${countries.find(c => c.code === currentCountry)?.name || 'Unknown'})` : `مخصص (${countries.find(c => c.code === currentCountry)?.nameArabic || 'غير معروف'})`);
+
+            // Update breakdown details
+            const breakdownDetailsElement = document.getElementById('breakdown-details');
+            breakdownDetailsElement.innerHTML = ''; // Clear previous
+            for (const category in breakdown) {
+                const categoryAccuracy = categoryCounts[category] > 0 ? (breakdown[category] / categoryCounts[category]) * 100 : 0;
+                const breakdownItem = document.createElement('div');
+                breakdownItem.classList.add('breakdown-item');
+                breakdownItem.innerHTML = `
+                    <span>${isEnglishUI ? getCategoryName(category, 'en') : getCategoryName(category, 'ar')}</span>
+                    <div class="breakdown-bar">
+                        <div class="breakdown-fill" style="width: ${categoryAccuracy.toFixed(0)}%"></div>
+                    </div>
+                    <span style="font-weight: 600;">${categoryAccuracy.toFixed(0)}%</span>
+                `;
+                breakdownDetailsElement.appendChild(breakdownItem);
+            }
+            updateUIContent('english'); // Ensure all result text is updated to English
+        }
+
+        function calculateIQ(correctAnswers, totalQuestions) {
+            // Simple linear scaling for demonstration purposes
+            // In a real scenario, this would involve more complex psychometric calculations
+            const percentage = (correctAnswers / totalQuestions) * 100;
+            // Assume average IQ is 100, and a perfect score is 140, lowest is 60
+            // Range 60-140 is 80 points.
+            // 100% accuracy = 140 IQ
+            // 0% accuracy = 60 IQ
+            return Math.round(60 + (percentage / 100) * 80);
+        }
+
+        function getIQLevel(iq, lang = 'en') {
+            if (lang === 'en') {
+                if (iq >= 140) return 'Genius';
+                if (iq >= 120) return 'Very Superior';
+                if (iq >= 110) return 'Superior';
+                if (iq >= 90) return 'Average';
+                if (iq >= 80) return 'Below Average';
+                return 'Needs Support';
+            } else {
+                if (iq >= 140) return 'عبقري';
+                if (iq >= 120) return 'فوق المتوسط بكثير';
+                if (iq >= 110) return 'فوق المتوسط';
+                if (iq >= 90) return 'متوسط';
+                if (iq >= 80) return 'أقل من المتوسط';
+                return 'يحتاج إلى دعم';
+            }
+        }
+
+        function getPercentile(iq) {
+            // Simplified percentile calculation
+            if (iq >= 140) return 99;
+            if (iq >= 120) return 90;
+            if (iq >= 110) return 75;
+            if (iq >= 100) return 50;
+            if (iq >= 90) return 25;
+            if (iq >= 80) return 10;
+            return 5;
+        }
+
+        function updateIQCircle(iq) {
+            const iqCircle = document.getElementById('iq-circle');
+            const angle = (iq - 60) / 80 * 360; // Scale IQ from 60-140 to 0-360 degrees
+            iqCircle.style.background = `conic-gradient(var(--accent-blue) 0deg ${angle}deg, #e0e0e0 ${angle}deg 360deg)`;
+        }
+
+        function getCategoryName(categoryCode, lang = 'en') {
+            if (lang === 'en') {
+                switch (categoryCode) {
+                    case 'mathematical': return 'Mathematical Reasoning';
+                    case 'verbal': return 'Verbal Reasoning';
+                    case 'spatial': return 'Spatial Reasoning';
+                    case 'memory': return 'Working Memory';
+                    default: return categoryCode;
+                }
+            } else {
+                switch (categoryCode) {
+                    case 'mathematical': return 'المنطق الرياضي';
+                    case 'verbal': return 'التفكير اللغوي';
+                    case 'spatial': return 'التفكير المكاني';
+                    case 'memory': return 'الذاكرة العاملة';
+                    default: return categoryCode;
+                }
+            }
+        }
+
+        function shareResults() {
+            alert(isEnglishUI ? 'Preparing to share results... This feature will be available soon.' : 'جاري تجهيز مشاركة النتائج... سيتم توفير هذه الميزة قريباً');
+        }
+
+        function downloadCertificate() {
+            alert(isEnglishUI ? 'Preparing certificate... This feature will be available soon.' : 'جاري تحضير الشهادة... سيتم توفير هذه الميزة قريباً');
+        }
+
+        function restartTest() {
+            // Reset all variables
+            currentQuestionIndex = 0;
+            selectedAnswers = [];
+            testQuestions = [];
+            currentCountry = 'global';
+            timeRemaining = 2700;
+            
+            // Clear timer
+            if (testTimer) {
+                clearInterval(testTimer);
+                testTimer = null;
+            }
+            
+            // Reset UI and show home page
+            showHomePage(); // This will also update UI content
+        }
+
+        // Utility Functions
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // Initialize the application
+        window.addEventListener('load', function() {
+            // isEnglishUI is already true by default now
+            // Set body class and lang attribute in HTML directly
+            showHomePage(); // This will render the home page content in English
+        });
+
+        // Prevent back button during test
+        window.addEventListener('beforeunload', function(e) {
+            if (currentPage === 'test-page') {
+                e.preventDefault();
+                e.returnValue = '';
+                return isEnglishUI ? 'Are you sure you want to leave the test? Your progress will be lost.' : 'هل أنت متأكد من أنك تريد ترك الاختبار؟ سيتم فقدان تقدمك.';
+            }
+        });
+    </script>
+</body>
+</html>
